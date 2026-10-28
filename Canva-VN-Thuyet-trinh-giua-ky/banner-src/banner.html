@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Canva VN · Banner</title>
+<style>
+@font-face{font-family:"InterD";font-weight:700;src:url(../fonts/interd-700.woff) format("woff")}
+@font-face{font-family:"InterD";font-weight:800;src:url(../fonts/interd-800.woff) format("woff")}
+@font-face{font-family:"InterD";font-weight:900;src:url(../fonts/interd-900.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:400;src:url(../fonts/inter-400.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:500;src:url(../fonts/inter-500.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:600;src:url(../fonts/inter-600.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:700;src:url(../fonts/inter-700.woff) format("woff")}
+@font-face{font-family:"Lora";font-style:italic;font-weight:400 700;src:url(../fonts/lora-italic.woff) format("woff")}
+:root{--night:#0B0920;--turq:#00C4CC;--blue:#5A32FA;--purple:#7D2AE8;--sel:#8B3DFF;--yel:#FFD400;--ink:#1D1446;--mut:#BDB6EC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--night)}
+body{font-family:"Inter",sans-serif;color:#fff;-webkit-font-smoothing:antialiased;overflow:hidden}
+#b{position:relative;overflow:hidden;background:var(--night)}
+.abs{position:absolute}
+/* ---------- cosmos background ---------- */
+.glow{position:absolute;border-radius:50%;pointer-events:none}
+.rays{position:absolute;inset:-20%;background:repeating-conic-gradient(from 3deg at var(--rx,50%) var(--ry,45%),rgba(190,170,255,.11) 0deg 1.1deg,transparent 1.1deg 6.5deg);
+  -webkit-mask:radial-gradient(circle at var(--rx,50%) var(--ry,45%),#000 0,rgba(0,0,0,.85) 18%,transparent 62%);mask:radial-gradient(circle at var(--rx,50%) var(--ry,45%),#000 0,rgba(0,0,0,.85) 18%,transparent 62%);filter:blur(1.2px)}
+.stars{position:absolute;left:0;top:0;width:2px;height:2px;border-radius:50%}
+.grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* ---------- type ---------- */
+.kick{font-family:"Inter";font-weight:600;letter-spacing:-.005em;color:#E9E5FF}
+.h1{font-family:"InterD";font-weight:900;letter-spacing:-.035em;line-height:1.06;color:#fff;text-shadow:0 0 40px rgba(160,130,255,.55),0 0 120px rgba(90,50,250,.5)}
+.gt{background:linear-gradient(100deg,#36E3EA 0%,#7FA2FF 45%,#B07CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-family:"InterD";font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.chips{display:flex;gap:12px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:10px;border-radius:999px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);font-weight:600;white-space:nowrap;color:#F1EEFF}
+.chip i{display:block;border-radius:50%;background:linear-gradient(135deg,var(--turq),var(--blue))}
+/* ---------- logo ---------- */
+.logo{position:absolute;border-radius:50%;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 10px 40px rgba(0,196,204,.35),0 0 80px rgba(125,42,232,.45)}
+.logo img{width:100%;height:100%;display:block;border-radius:50%}
+.badge{position:absolute;display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:0 18px 0 14px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#EAE6FF;white-space:nowrap}
+.badge b{width:10px;height:10px;border-radius:50%;background:#36E3EA;box-shadow:0 0 12px #36E3EA}
+/* ---------- editor card ---------- */
+.card{position:absolute;width:520px;height:400px;border-radius:30px;background:#FFF6EC;overflow:hidden;color:var(--ink);transform-origin:50% 50%;
+  box-shadow:0 50px 100px rgba(8,3,40,.65),0 0 0 1px rgba(255,255,255,.4) inset}
+.card .pe{position:absolute;right:-70px;top:-80px;width:260px;height:260px;border-radius:50%;background:#FFC7A6}
+.card .li{position:absolute;left:-90px;bottom:-120px;width:240px;height:240px;border-radius:50%;background:#CDBBFF}
+.card .hd{position:absolute;left:40px;top:34px;font:700 15px/1 "Inter";letter-spacing:.14em;color:#3A2A72}
+.card .fp{position:absolute;left:40px;top:70px;height:44px;padding:0 16px;border-radius:12px;background:#fff;box-shadow:0 6px 16px rgba(40,20,120,.14);display:flex;align-items:center;gap:10px;font:600 17px/1 "Inter";color:#2A1F5A}
+.card .fp em{font:italic 700 19px/1 "Lora";color:#5A32FA}
+.card .fp s{text-decoration:none;color:#9A93C4;margin-left:18px;font-size:13px}
+.card .tx{position:absolute;left:40px;top:142px;width:440px;font:italic 600 78px/1.02 "Lora";color:#24185E;letter-spacing:-.01em}
+.card .sb{position:absolute;left:28px;top:132px;width:464px;height:184px;border:3px solid var(--sel);border-radius:6px}
+.card .sb i{position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--sel)}
+.card .ft{position:absolute;left:40px;bottom:30px;font:500 16px/1 "Inter";color:#6A5FA0}
+.card .cur{position:absolute;right:46px;bottom:26px;width:34px;height:34px;border-radius:50%;border:3px solid #24185E}
+/* ---------- diacritic tiles ---------- */
+.dt{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:24%;background:linear-gradient(160deg,#FFFFFF,#ECEBFF);
+  box-shadow:0 22px 44px rgba(12,5,50,.5),inset 0 -5px 0 rgba(90,50,250,.10),inset 0 1px 0 #fff}
+.dt span{font-family:"InterD";font-weight:900;line-height:1;background:linear-gradient(135deg,#00B8C4,#5A32FA 60%,#8E3BF0);-webkit-background-clip:text;background-clip:text;color:transparent;padding:.08em .04em}
+.dt.sc span{font-family:"Lora";font-style:italic;font-weight:700}
+/* ---------- AI prompt ---------- */
+.ai{position:absolute;border-radius:30px;background:linear-gradient(180deg,rgba(28,20,70,.92),rgba(16,11,44,.94));
+  box-shadow:0 0 0 1.5px rgba(160,140,255,.35),0 0 50px rgba(0,196,204,.28),0 0 110px rgba(125,42,232,.42),0 30px 60px rgba(0,0,0,.5)}
+.ai::before{content:"";position:absolute;inset:-2px;border-radius:32px;padding:2px;background:linear-gradient(100deg,#36E3EA,#5A32FA 50%,#C04BFF);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.ai .lb{position:absolute;display:flex;align-items:center;gap:8px;border-radius:999px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);font-weight:600;color:#fff}
+.ai .q{position:absolute;color:#fff;font-weight:500;white-space:nowrap}
+.ai .q u{display:inline-block;width:3px;height:1.1em;background:#36E3EA;vertical-align:-.18em;margin-left:4px;text-decoration:none}
+.ai .tg{position:absolute;display:flex;align-items:center;gap:10px;font-weight:600;color:#E9E5FF}
+.ai .tg b{position:relative;display:block;border-radius:999px;background:linear-gradient(90deg,#36E3EA,#5A32FA)}
+.ai .tg s{position:absolute;right:3px;top:3px;border-radius:50%;background:#fff}
+.ai .go{position:absolute;border-radius:50%;background:linear-gradient(135deg,#36E3EA,#5A32FA 60%,#8E3BF0);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(54,227,234,.5)}
+/* ---------- posters / polaroids ---------- */
+.ps{position:absolute;border-radius:16px;overflow:hidden;box-shadow:0 26px 60px rgba(5,2,30,.6),0 0 0 2px rgba(255,255,255,.75)}
+.ps img{display:block;width:100%;height:100%;object-fit:cover}
+.pl{position:absolute;background:#FBF8F2;border-radius:10px;padding:12px 12px 0;box-shadow:0 30px 60px rgba(5,2,30,.55)}
+.pl img{display:block;width:100%;border-radius:3px}
+.pl p{font:700 19px/48px "Inter";color:#2A1F5A;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+.pl p i{display:inline-block;width:22px;height:15px;background:#DA251D;position:relative;border-radius:2px}
+.pl p i::after{content:"★";position:absolute;inset:0;color:#FFDE00;font-size:11px;line-height:15px;text-align:center;font-style:normal}
+/* ---------- offer + CTA ---------- */
+.offer{position:absolute;display:flex;align-items:center;border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.offer .cr{flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFF1A0,#FFD400 55%,#F2A900);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(255,212,0,.35)}
+.offer .k{font-weight:600;color:#D9D3FF;line-height:1.25}
+.offer .v{font-family:"InterD";font-weight:900;letter-spacing:-.02em;line-height:1.05;color:#fff}
+.offer .v em{font-style:normal;color:var(--yel)}
+.offer .pay{font-weight:500;color:#B9B2E6}
+.cta{position:absolute;display:flex;align-items:center;justify-content:space-between;border-radius:999px;background:linear-gradient(100deg,#0B93B8 0%,#5A32FA 52%,#8E3BF0 100%);
+  box-shadow:0 0 0 2px rgba(255,255,255,.25) inset,0 18px 50px rgba(90,50,250,.55),0 0 60px rgba(0,196,204,.3);font-family:"InterD";font-weight:800;letter-spacing:-.01em;color:#fff;white-space:nowrap}
+.cta i{flex:none;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.url{position:absolute;font-weight:700;letter-spacing:.02em;color:#E3DEFF}
+/* guides (only when ?guides) */
+.guide{position:absolute;pointer-events:none;border:3px dashed rgba(255,80,80,.9);background:rgba(255,60,60,.08);display:none}
+body.guides .guide{display:block}
+</style>
+</head>
+<body>
+<div id="b"></div>
+<script>
+const P=new URLSearchParams(location.search), V=P.get('v')||'square';
+if(P.has('guides')) document.body.classList.add('guides');
+const SZ={square:[1200,1200],story:[1080,1920],cover:[1640,624],web:[1920,600]}[V];
+const b=document.getElementById('b'); b.style.width=SZ[0]+'px'; b.style.height=SZ[1]+'px';
+const H=(s)=>b.insertAdjacentHTML('beforeend',s);
+const st=(o)=>Object.entries(o).map(([k,v])=>`${k}:${typeof v==='number'&&!/opacity|z-index|font-weight/.test(k)?v+'px':v}`).join(';');
+// seeded rng
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+function cosmos({rx='50%',ry='45%',glows=[]}){
+  glows.forEach(g=>H(`<div class="glow" style="left:${g[0]}px;top:${g[1]}px;width:${g[2]}px;height:${g[2]}px;background:radial-gradient(closest-side,${g[3]} 0%,${g[3].replace(/[\d.]+\)$/,m=>(parseFloat(m)*.42).toFixed(3)+')')} 45%,rgba(0,0,0,0) 100%)"></div>`));
+  H(`<div class="rays" style="--rx:${rx};--ry:${ry}"></div>`);
+  let sh=[];for(let i=0;i<Math.round(SZ[0]*SZ[1]/9000);i++){const a=(.25+rnd()*.6).toFixed(2);sh.push(`${Math.round(rnd()*SZ[0])}px ${Math.round(rnd()*SZ[1])}px 0 ${rnd()<.12?'1px':'0'} rgba(255,255,255,${a})`)}
+  H(`<div class="stars" style="box-shadow:${sh.join(',')}"></div>`);
+}
+const ICON={
+ arrow:(c,s)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
+ crown:(c,s)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${c}"><path d="M3 7.5l4.6 3.6L12 4.5l4.4 6.6L21 7.5l-1.8 10.2a1.6 1.6 0 0 1-1.6 1.3H6.4a1.6 1.6 0 0 1-1.6-1.3L3 7.5z"/></svg>`,
+ spark:(c,s)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${c}"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>`,
+ send:(c,s)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${c}"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.7 6.1 9 1.3-9 1.3-1.7 6.1a.9.9 0 0 0 1.3 1z"/></svg>`
+};
+function logo(x,y,s){H(`<div class="logo" style="${st({left:x,top:y,width:s,height:s})}"><img src="../img/logo-canva.png" alt="Canva"></div>`)}
+function card(x,y,sc,rot,z=5){
+  H(`<div class="card" style="left:${x}px;top:${y}px;transform:rotate(${rot}deg) scale(${sc});z-index:${z}">
+   <div class="pe"></div><div class="li"></div>
+   <div class="hd">NGÀY HỘI SÁNG TẠO · 2026</div>
+   <div class="fp">Aa <em>Lora Italic</em> <s>▾</s></div>
+   <div class="sb"><i style="left:-10px;top:-10px"></i><i style="right:-10px;top:-10px"></i><i style="left:-10px;bottom:-10px"></i><i style="right:-10px;bottom:-10px"></i><i style="left:calc(50% - 8px);top:-10px"></i><i style="left:calc(50% - 8px);bottom:-10px"></i></div>
+   <div class="tx">Xin chào<br>Việt Nam</div>
+   <div class="ft">Thiết kế dễ dàng hơn với Canva</div><div class="cur"></div></div>`);
+}
+function tile(ch,x,y,s,rot,sc=false,z=6){H(`<div class="dt${sc?' sc':''}" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;transform:rotate(${rot}deg);z-index:${z}"><span style="font-size:${Math.round(s*.56)}px">${ch}</span></div>`)}
+function ai(x,y,w,h,fs,z=7,text='Thiết kế poster quảng cáo cho quán trà sữa'){
+  const pad=Math.round(h*.2), lbH=Math.round(h*.3), btn=Math.round(h*.36);
+  H(`<div class="ai" style="${st({left:x,top:y,width:w,height:h})};z-index:${z}">
+   <div class="q" style="left:${pad+4}px;top:${pad}px;font-size:${fs}px">${text}<u></u></div>
+   <div class="lb" style="left:${pad}px;bottom:${pad}px;height:${lbH}px;padding:0 ${Math.round(lbH*.45)}px;font-size:${Math.round(fs*.78)}px">${ICON.spark('#7FD8FF',Math.round(fs*.8))}Canva AI</div>
+   <div class="tg" style="right:${pad+btn+18}px;bottom:${pad+Math.round((btn-lbH)/2)}px;height:${lbH}px;font-size:${Math.round(fs*.74)}px">Tạo ảnh <b style="width:${Math.round(lbH*1.5)}px;height:${Math.round(lbH*.8)}px"><s style="width:${Math.round(lbH*.8)-6}px;height:${Math.round(lbH*.8)-6}px"></s></b></div>
+   <div class="go" style="right:${pad}px;bottom:${pad}px;width:${btn}px;height:${btn}px">${ICON.send('#fff',Math.round(btn*.5))}</div></div>`);
+}
+function poster(n,x,y,w,h,rot,z=4){H(`<div class="ps" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${rot}deg);z-index:${z}"><img src="../img/poster${n}.jpg" alt=""></div>`)}
+function pol(src,label,x,y,w,rot,z=3){H(`<div class="pl" style="left:${x}px;top:${y}px;width:${w}px;transform:rotate(${rot}deg);z-index:${z}"><img src="../img/${src}.jpg" alt=""><p><i></i>${label}</p></div>`)}
+function offer(x,y,w,h,{cr,k,v,pay}){
+  H(`<div class="offer" style="${st({left:x,top:y,width:w,height:h})};padding:0 ${Math.round(h*.28)}px;gap:${Math.round(h*.24)}px;z-index:8">
+   <div class="cr" style="width:${Math.round(h*.6)}px;height:${Math.round(h*.6)}px">${ICON.crown('#4A2A00',Math.round(h*.32))}</div>
+   <div><div class="k" style="font-size:${k}px">Dùng thử Canva Pro</div><div class="v" style="font-size:${v}px"><em>Miễn phí</em> 30 ngày</div>${pay?`<div class="pay" style="font-size:${pay}px;margin-top:6px">Thanh toán MoMo · ZaloPay · ShopeePay</div>`:''}</div></div>`);
+}
+function cta(x,y,w,h,fs,label='Thử ngay hôm nay'){H(`<div class="cta" style="${st({left:x,top:y,width:w,height:h})};padding:0 ${Math.round(h*.12)}px 0 ${Math.round(h*.5)}px;font-size:${fs}px;z-index:9">${label}<i style="width:${h-Math.round(h*.24)}px;height:${h-Math.round(h*.24)}px">${ICON.arrow('#5A32FA',Math.round(h*.36))}</i></div>`)}
+function guide(x,y,w,h,label=''){H(`<div class="guide" style="${st({left:x,top:y,width:w,height:h})};z-index:50"></div>`)}
+
+/* ======================= VARIANTS ======================= */
+if(V==='square'){
+  cosmos({rx:'74%',ry:'40%',glows:[[380,-260,1100,'rgba(125,42,232,0.85)'],[-380,420,1000,'rgba(90,50,250,0.75)'],[700,560,900,'rgba(0,196,204,0.45)']]});
+  logo(96,88,92);
+  H(`<div class="badge" style="left:206px;top:110px;height:48px;font-size:17px"><b></b>Chính thức ra mắt · 2026</div>`);
+  H(`<div class="kick abs" style="left:98px;top:252px;font-size:36px">đã chính thức có mặt tại</div>`);
+  H(`<div class="h1 abs" style="left:90px;top:326px;font-size:178px">VIỆT<br>NAM</div>`);
+  H(`<div class="tag abs" style="left:98px;top:724px;width:520px;font-size:42px">Thiết kế tiếng Việt,<br><span class="gt">chuẩn từng dấu.</span></div>`);
+  poster(1,904,246,214,286,8,2); poster(4,930,506,190,190,-6,2);
+  card(600,304,0.9,-5,5);
+  tile('Ă',1046,196,92,10,false); tile('Đ',604,222,80,-12,false); tile('Ư',1062,594,84,8,true); tile('Ơ',548,612,70,-8,true);
+  ai(616,744,500,124,22,7);
+  offer(96,936,548,150,{k:22,v:38,pay:15.5});
+  cta(664,960,440,104,31);
+  H(`<div class="url" style="left:664px;top:1086px;width:440px;text-align:center;font-size:22px;opacity:.85">canva.com</div>`);
+  guide(0,0,1200,1200);
+}
+if(V==='story'){
+  cosmos({rx:'50%',ry:'36%',glows:[[-200,-300,1400,'rgba(125,42,232,0.8)'],[-500,900,1300,'rgba(90,50,250,0.72)'],[420,1050,1000,'rgba(0,196,204,0.42)'],[90,1640,900,'rgba(125,42,232,0.5)']]});
+  logo(488,286,104);
+  H(`<div class="kick abs" style="left:0;width:1080px;text-align:center;top:420px;font-size:44px">đã chính thức có mặt tại</div>`);
+  H(`<div class="h1 abs" style="left:0;width:1080px;text-align:center;top:500px;font-size:206px">VIỆT<br>NAM</div>`);
+  pol('pol-hcm','TP. Hồ Chí Minh',64,982,290,-9,2); pol('pol-hoian','Hội An',726,972,290,8,2);
+  card(280,930,0.88,-3,5);
+  tile('Ă',240,918,90,-10); tile('Đ',768,904,86,9); tile('Ư',214,1210,78,8,true); tile('Ơ',796,1222,72,-10,true);
+  H(`<div class="tag abs" style="left:0;width:1080px;text-align:center;top:1338px;font-size:44px">Thiết kế tiếng Việt, <span class="gt">chuẩn từng dấu.</span></div>`);
+  offer(170,1414,740,100,{k:21,v:35,pay:0});
+  cta(246,1534,588,94,34);
+  H(`<div class="url" style="left:0;width:1080px;text-align:center;top:1638px;font-size:20px;opacity:.85">canva.com</div>`);
+  guide(0,0,1080,250); guide(0,1670,1080,250);
+}
+if(V==='cover'){
+  cosmos({rx:'50%',ry:'55%',glows:[[300,-500,1100,'rgba(125,42,232,0.85)'],[-260,80,800,'rgba(90,50,250,0.75)'],[1100,0,900,'rgba(0,196,204,0.4)']]});
+  // left decor (outside mobile crop)
+  pol('pol-hcm','TP. Hồ Chí Minh',-6,150,250,-10,2); pol('pol-hoian','Hội An',150,300,230,7,2);
+  tile('Ă',196,92,80,-12); tile('Ơ',44,452,70,10,true);
+  // right decor
+  poster(1,1428,70,170,226,9,2); poster(3,1450,330,168,168,-7,2);
+  card(1180,160,0.62,-6,4);
+  tile('Đ',1360,58,80,10); tile('Ư',1384,470,72,-8,true);
+  // center safe content (x 270..1370); bottom-left kept clear for the profile picture
+  logo(774,64,92);
+  H(`<div class="kick abs" style="left:0;width:1640px;text-align:center;top:176px;font-size:34px">đã chính thức có mặt tại</div>`);
+  H(`<div class="h1 abs" style="left:0;width:1640px;text-align:center;top:222px;font-size:150px">VIỆT NAM</div>`);
+  H(`<div class="tag abs" style="left:0;width:1640px;text-align:center;top:404px;font-size:34px">Thiết kế tiếng Việt, <span class="gt">chuẩn từng dấu.</span></div>`);
+  H(`<div class="url" style="left:700px;top:476px;width:240px;height:46px;border-radius:999px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);text-align:center;font-size:20px;line-height:43px">canva.com</div>`);
+  guide(180,0,1280,624); guide(270,0,1100,624);
+}
+if(V==='web'){
+  cosmos({rx:'72%',ry:'50%',glows:[[900,-500,1300,'rgba(125,42,232,0.85)'],[-300,100,900,'rgba(90,50,250,0.7)'],[1400,100,900,'rgba(0,196,204,0.42)']]});
+  logo(240,70,84);
+  H(`<div class="badge" style="left:342px;top:88px;height:46px;font-size:16px"><b></b>Chính thức ra mắt · 2026</div>`);
+  H(`<div class="kick abs" style="left:242px;top:176px;font-size:32px">đã chính thức có mặt tại</div>`);
+  H(`<div class="h1 abs" style="left:234px;top:222px;font-size:136px">VIỆT NAM</div>`);
+  H(`<div class="tag abs" style="left:242px;top:392px;font-size:34px">Thiết kế tiếng Việt, <span class="gt">chuẩn từng dấu.</span></div>`);
+  cta(242,456,420,84,30);
+  H(`<div class="abs" style="left:690px;top:470px;font:600 20px/1.35 Inter;color:#D9D3FF">Dùng thử Canva Pro <b style="color:#FFD400">miễn phí 30 ngày</b><br><span style="color:#B9B2E6;font-weight:500">Thanh toán MoMo · ZaloPay · ShopeePay</span></div>`);
+  pol('pol-mcc','Mù Cang Chải',1630,80,230,9,1);
+  poster(1,1520,300,170,226,-8,2); poster(2,1690,330,160,160,7,2);
+  card(1080,70,0.72,-5,4);
+  tile('Ă',1110,36,84,-12); tile('Đ',1470,30,76,10); tile('Ư',1060,380,74,8,true);
+  ai(1150,420,500,120,22,7);
+  guide(240,0,1440,600);
+}
+H('<div class="grain"></div>');
+document.fonts.ready.then(()=>{document.body.dataset.ready=1});
+</script>
+</body>
+</html>

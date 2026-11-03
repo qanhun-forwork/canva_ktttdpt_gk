@@ -13,27 +13,27 @@
 | F | Toàn màn hình |
 | S | Ghi chú người nói + đồng hồ (vàng sau 22 phút, đỏ sau 25 phút) |
 | B | Màn hình đen |
-| số + Enter | Nhảy tới slide (ví dụ `17` Enter = slide video) |
+| số + Enter | Nhảy tới slide (ví dụ `19` Enter = slide video) |
 | H | Hiện bảng phím tắt |
-| **Slide video (17):** K / R / M | Phát–tạm dừng / phát lại từ đầu / tắt–bật tiếng |
+| **Slide video (19):** K / R / M | Phát–tạm dừng / phát lại từ đầu / tắt–bật tiếng |
 
-- Slide 17 tự phát **cả hai video cùng lúc** sau ~1 giây. Âm thanh lấy từ bản 9:16; bản 16:9 tắt tiếng để không bị vọng, và tự bám nhịp theo bản 9:16.
+- Slide 19 tự phát **cả hai video cùng lúc** sau ~1 giây. Âm thanh lấy từ bản 9:16; bản 16:9 tắt tiếng để không bị vọng, và tự bám nhịp theo bản 9:16.
 - Nếu trình duyệt chặn tự phát, trên video sẽ hiện nút ▶: bấm vào là chạy.
 - Kiểm tra loa và âm lượng trước giờ thi. Hai video 1080p/60fps chạy cùng lúc cần máy có giải mã phần cứng (hầu hết laptop từ 2018 trở lên đều ổn).
-- `Canva-VN-Thuyet-trinh-giua-ky.pdf` là bản PDF 25 trang (chụp từng slide ở độ phân giải 3840 × 2160, giữ nguyên màu gradient và hiệu ứng ánh sáng; video hiển thị bằng khung hình tĩnh). Dùng để nộp bài hoặc làm bản dự phòng nếu máy chiếu không mở được HTML.
+- `Canva-VN-Thuyet-trinh-giua-ky.pdf` là bản PDF 27 trang (chụp từng slide ở độ phân giải 3840 × 2160, giữ nguyên màu gradient và hiệu ứng ánh sáng; slide video hiển thị khung hình kết ở giây 28). Dùng để nộp bài hoặc làm bản dự phòng nếu máy chiếu không mở được HTML.
 
-## 2. Cấu trúc 25 slide (≤ 25 phút)
+## 2. Cấu trúc 27 slide (≤ 25 phút)
 
 | # | Slide | Thời lượng |
 |---|---|---|
 | 1–2 | Bìa · Lộ trình 4 phần | ~1′ |
 | 3–5 | **01 Bối cảnh:** Canva tại Việt Nam 2026 · Bốn điểm chưa tốt | ~3′ |
 | 6–8 | **02 Giải pháp:** Vấn đề cốt lõi & mục tiêu · Ý tưởng chiến dịch | ~3′ |
-| 9–15 | **03 Bộ Banner:** Tổng quan · Vuông trên Feed · Kiểm tra 3 giây · Story · Cover desktop/mobile · Header web | ~9′ |
-| 16–22 | **04 Short Video:** Chiếu song song 9:16 + 16:9 · Cấu trúc Hook–Thân–Kết · Dựng theo nhạc · Chữ & phụ đề · Nhận diện & thông số · **Kiểm chứng thực tế trên Threads** | ~9′ |
-| 23–25 | Tổng kết · Cảm ơn & hỏi đáp · Nguồn | ~1′ + hỏi đáp |
+| 9–17 | **03 Bộ Banner:** **Tệp khách hàng & nền tảng · Hành vi theo từng định dạng** · Tổng quan · Vuông trên Feed · Kiểm tra 3 giây · Story · Cover desktop/mobile · Header web | ~10′ |
+| 18–24 | **04 Short Video:** Chiếu song song 9:16 + 16:9 · Cấu trúc Hook–Thân–Kết · Dựng theo nhạc · Chữ & phụ đề · Nhận diện & thông số · **Kiểm chứng thực tế trên Threads** | ~9′ |
+| 25–27 | Tổng kết · Cảm ơn & hỏi đáp · Nguồn | ~1′ + hỏi đáp |
 
-## 3. Slide 22: kết quả thực tế trên Threads
+## 3. Slide 24: kết quả thực tế trên Threads
 
 Số liệu lấy từ mục **Thông tin chi tiết** của bài [threads.com/@qanhun/post/De_Dyr4Exnd](https://www.threads.com/@qanhun/post/De_Dyr4Exnd), ghi lúc 16:50 ngày 28/10/2026 (bài đăng lúc 12:01 ngày 27/10/2026, tức sau khoảng 29 giờ):
 
@@ -105,4 +105,4 @@ Lưu ý còn lại: video hiện có logo ở 3 điểm chạm (0:01, 0:03–0:0
 
 ## 7. Nguồn dữ liệu
 
-Báo cáo nghiên cứu đầy đủ (có link từng nguồn): `Canva Việt Nam năm 2026.md`. Thông số video (1080 × 1920, 60 fps, 30,0 s, 0 px viền đen) đo trực tiếp bằng ffprobe/ffmpeg; nhịp ~129 BPM và 12 điểm chuyển cảnh đo từ file âm thanh của video.
+Báo cáo nghiên cứu đầy đủ (có link từng nguồn): `Canva Việt Nam năm 2026.md`. Nghiên cứu tệp khách hàng và hành vi theo nền tảng (slide 10–11, bổ sung theo góp ý của giảng viên): `reports/Hành vi khách hàng Canva.md`, ghi chú gốc trong `research_notes/Hành vi khách hàng Canva/`. Thông số video (1080 × 1920, 60 fps, 30,0 s, 0 px viền đen) đo trực tiếp bằng ffprobe/ffmpeg; nhịp ~129 BPM và 12 điểm chuyển cảnh đo từ file âm thanh của video.

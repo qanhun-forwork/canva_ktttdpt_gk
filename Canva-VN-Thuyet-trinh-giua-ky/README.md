@@ -50,6 +50,8 @@ Số liệu lấy từ mục **Thông tin chi tiết** của bài [threads.com/@
 
 Số liệu sẽ còn tăng; nếu muốn cập nhật trước buổi thi, gửi số mới để xuất lại slide.
 
+**Giao diện slide:** cùng chất liệu với bộ banner: nền giấy #F7EAD6, chữ xanh đen #1B1D4E, nhấn tím → xanh, mây góc cắt từ tranh banner dọc (`img/cloud-tl.png`, `img/cloud-br.png`). Video, ảnh chụp Threads và các khối màu giữ nguyên.
+
 ## 4. Thông số bàn giao bộ banner (handoff)
 
 Bộ banner được thiết kế lại theo góp ý của giảng viên: **một phong cách chung, mỗi nền tảng nói với một tệp khách hàng** (dựa trên `reports/Hành vi khách hàng Canva.md`). Phong cách lấy từ banner dọc “Ý tưởng Việt” của nhóm: nền giấy dó, tranh dân gian kiểu Đông Hồ, sen, mây tím xanh, chữ ký Canva, nút tím.
@@ -60,7 +62,7 @@ Thư mục `banners/` chứa file PNG xuất đúng kích thước; `banner-src/
 |---|---|---|---|---|
 | `banner-story-9x16-1080x1920.png` | 1080 × 1920 | TikTok, IG/FB Story · sinh viên 18–22 | “Ý tưởng Việt. Sáng tạo không giới hạn.” · CTA “Khám phá Canva AI” | Hình gốc của nhóm đã xóa chữ; mọi chữ trong y 262 → 1664, x ≥ 90 |
 | `banner-vuong-1x1-1200x1200.png` | 1200 × 1200 | Facebook Feed · người mới đi làm 22–26 | “Slide họp sáng mai? Có mẫu đấy!” · Soạn thảo Magic | Mọi chữ canh giữa trong lõi 810 px (lưới Instagram 3:4); đường mắt Logo → Headline → Hình → CTA |
-| `banner-cover-facebook-1640x624.png` | 1640 × 624 (@2x của 820 × 312) | Fanpage · mọi người vào Page | “Ý tưởng Việt. Sáng tạo không giới hạn.” + “Thiết kế tiếng Việt, chuẩn từng dấu” | Chữ trong vùng giữa ~1100 px (≈ 550 px @1x), lệch trái 50 px để tránh quả cầu; không vẽ CTA |
+| `banner-cover-facebook-1640x624.png` | 1640 × 624 (@2x của 820 × 312) | Fanpage · mọi người vào Page | “Ý tưởng Việt. Sáng tạo không giới hạn.” + “Thiết kế tiếng Việt, chuẩn từng dấu” | Chữ trong vùng giữa ~1100 px (≈ 550 px @1x); headline 54 px, cách diều và quả cầu ~100 px mỗi bên; không vẽ CTA |
 | `banner-header-web-1920x600.png` | 1920 × 600 (16:5) | Website · người sắp mua | “Thiết kế như dân chuyên, miễn phí 30 ngày đầu.” · MoMo, ZaloPay, ShopeePay | Khối chữ trong khung nội dung 1440 px, căn từ x = 240; hình ở cánh phải |
 
 **Design tokens**
@@ -73,7 +75,7 @@ Thư mục `banners/` chứa file PNG xuất đúng kích thước; `banner-src/
 | `cta` | gradient 100° #7B3FF2 → #6A4BFF, chữ trắng | Nút “Thử ngay hôm nay” |
 | `font-display` | Inter Display 900 / 800 | Headline, nhãn chữ hoa, CTA |
 | `font-text` | Inter 600–700 | Chữ phụ, dòng ưu đãi |
-| Headline | 82 px (vuông) · 68 px (cover) · 70 px (web), line-height 1.18 | Đủ chỗ cho dấu mũ và dấu nặng tiếng Việt |
+| Headline | 84 px (vuông) · 80 px (story) · 54 px (cover) · 70 px (web), line-height 1.18 | Đủ chỗ cho dấu mũ và dấu nặng tiếng Việt |
 
 **Độ tương phản (WCAG):** chữ ink/nền giấy 12,9:1 · ink2/nền giấy 7,0:1 · chữ nhấn/nền giấy ≥ 3,6:1 (chữ lớn ≥ 3:1) · chữ trắng/nút CTA ≥ 5,2:1.
 
@@ -96,7 +98,7 @@ Thư mục `banners/` chứa file PNG xuất đúng kích thước; `banner-src/
 | Đầu xanh của gradient chữ nhấn (#5B8CFF) chỉ đạt 2,6:1 trên nền giấy | Nghiêm trọng | Đổi sang #4A6CE8 → 3,75:1 |
 | Chữ ký Canva cắt từ banner dọc còn dính nền giấy, lộ thành ô vuông | Vừa | Tách nền (key màu giấy) thành PNG trong suốt |
 | Feed: chữ lệch trái, ra ngoài lõi 810 px; dòng phụ đè lên lá sen | Vừa | Canh giữa toàn bộ; bỏ dòng phụ, đưa ưu đãi xuống dưới nút CTA |
-| Cover: dòng “Sáng tạo không giới hạn.” chạm quả cầu bên phải | Vừa | Giảm còn 68 px, dời khối chữ sang trái 50 px (vẫn trong vùng giữa) |
+| Cover: chữ “Sáng” và “hạn” sát diều bên trái và quả cầu bên phải, đọc bị rối | Vừa | Giảm headline còn 54 px, dời khối chữ sang trái 50 px → cách mỗi bên ~100 px |
 | Story gốc: chữ in sẵn khác font với cả bộ, lỗi “Cộng cụ”, chữ ký Canva và hàng lợi ích nằm trong vùng 250 px bị che | Vừa | Xóa chữ bằng Higgsfield (giữ nguyên hình), dựng lại chữ bằng HTML trong vùng an toàn |
 | Feed: “Gửi sếp bản đẹp” nghe gượng, không giống giọng Canva | Vừa | Đổi thành “Slide họp sáng mai? Có mẫu đấy!” + Soạn thảo Magic |
 | Chữ tô gradient trong slide bị cắt chân: dấu nặng dưới “Việt”, đuôi g/p, dấu chấm của “!” | Nghiêm trọng | Nới vùng tô màu xuống dưới chân chữ; kiểm tra lại toàn bộ tiêu đề |

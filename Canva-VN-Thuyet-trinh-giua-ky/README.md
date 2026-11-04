@@ -52,53 +52,53 @@ Số liệu sẽ còn tăng; nếu muốn cập nhật trước buổi thi, gử
 
 ## 4. Thông số bàn giao bộ banner (handoff)
 
-Thư mục `banners/` chứa file PNG xuất đúng kích thước; `banner-src/banner.html` là file nguồn (mở bằng `?v=square|story|cover|web`, thêm `&guides` để thấy vùng an toàn).
+Bộ banner được thiết kế lại theo góp ý của giảng viên: **một phong cách chung, mỗi nền tảng nói với một tệp khách hàng** (dựa trên `reports/Hành vi khách hàng Canva.md`). Phong cách lấy từ banner dọc “Ý tưởng Việt” của nhóm: nền giấy dó, tranh dân gian kiểu Đông Hồ, sen, mây tím xanh, chữ ký Canva, nút tím.
 
-| File | Kích thước | Nền tảng | Vùng an toàn đã áp dụng |
-|---|---|---|---|
-| `banner-vuong-1x1-1200x1200.png` | 1200 × 1200 | Post Facebook / Instagram | Lề 90–96 px; đường mắt Logo → Headline → Sản phẩm → CTA |
-| `banner-story-9x16-1080x1920.png` | 1080 × 1920 | Story FB / IG / Zalo | Trống 250 px trên + 250 px dưới; nội dung nằm trong y = 286 → 1660 |
-| `banner-cover-facebook-1640x624.png` | 1640 × 624 (@2x của 820 × 312) | Ảnh bìa Fanpage | Chữ trong vùng giữa ~1100 px (≈ 550 px @1x, chặt hơn 640 × 312); nửa dưới bên trái để trống cho ảnh đại diện |
-| `banner-header-web-1920x600.png` | 1920 × 600 (16:5) | Header website | Khối chữ trong khung nội dung 1440 px, căn từ x = 240 |
+Thư mục `banners/` chứa file PNG xuất đúng kích thước; `banner-src/banner.html` là file nguồn (mở bằng `?v=square|story|cover|web`, thêm `&guides` để thấy vùng an toàn). Hình minh họa trong `banner-src/art/` làm bằng Higgsfield (GPT Image 2.5): `story.jpg` là banner dọc gốc của nhóm đã xóa chữ, ba hình còn lại vẽ mới theo phong cách đó, không chứa chữ; mọi chữ tiếng Việt dựng bằng HTML để không lỗi dấu.
+
+| File | Kích thước | Nền tảng · tệp khách hàng | Thông điệp | Vùng an toàn đã áp dụng |
+|---|---|---|---|---|
+| `banner-story-9x16-1080x1920.png` | 1080 × 1920 | TikTok, IG/FB Story · sinh viên 18–22 | “Ý tưởng Việt. Sáng tạo không giới hạn.” · CTA “Khám phá Canva AI” | Hình gốc của nhóm đã xóa chữ; mọi chữ trong y 262 → 1664, x ≥ 90 |
+| `banner-vuong-1x1-1200x1200.png` | 1200 × 1200 | Facebook Feed · người mới đi làm 22–26 | “Slide họp sáng mai? Có mẫu đấy!” · Soạn thảo Magic | Mọi chữ canh giữa trong lõi 810 px (lưới Instagram 3:4); đường mắt Logo → Headline → Hình → CTA |
+| `banner-cover-facebook-1640x624.png` | 1640 × 624 (@2x của 820 × 312) | Fanpage · mọi người vào Page | “Ý tưởng Việt. Sáng tạo không giới hạn.” + “Thiết kế tiếng Việt, chuẩn từng dấu” | Chữ trong vùng giữa ~1100 px (≈ 550 px @1x), lệch trái 50 px để tránh quả cầu; không vẽ CTA |
+| `banner-header-web-1920x600.png` | 1920 × 600 (16:5) | Website · người sắp mua | “Thiết kế như dân chuyên, miễn phí 30 ngày đầu.” · MoMo, ZaloPay, ShopeePay | Khối chữ trong khung nội dung 1440 px, căn từ x = 240; hình ở cánh phải |
 
 **Design tokens**
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `color-night` | #0B0920 | Nền |
-| `color-turq` / `color-blue` / `color-purple` | #00C4CC / #5A32FA / #7D2AE8 | Gradient nhận diện, chữ nhấn |
-| `color-yellow` | #FFD400 | Chỉ dùng cho ưu đãi (“Miễn phí 30 ngày”) |
-| `gradient-cta` | 100° #0B93B8 → #5A32FA 52% → #8E3BF0 | Nút “Thử ngay hôm nay” |
-| `font-display` | Inter Display 900 / 800 | Headline “VIỆT NAM”, tagline, CTA |
-| `font-text` | Inter 500–700 | Dòng dẫn, nhãn |
-| `font-accent` | Lora Italic 600 | Mẫu chữ “Xin chào Việt Nam” |
-| Headline | 178 px (vuông) · 206 px (story) · 150 px (cover) · 136 px (web), line-height 1.06 | Chừa chỗ cho dấu mũ và dấu nặng tiếng Việt |
+| `paper` | #F5E7D1 | Nền giấy dó |
+| `ink` / `ink2` | #1B1D4E / #4A4870 | Headline / chữ phụ |
+| `accent` | gradient 90° #8B3DFF → #7A5BFF → #4A6CE8 | Chữ nhấn (dòng 2 của headline) |
+| `cta` | gradient 100° #7B3FF2 → #6A4BFF, chữ trắng | Nút “Thử ngay hôm nay” |
+| `font-display` | Inter Display 900 / 800 | Headline, nhãn chữ hoa, CTA |
+| `font-text` | Inter 600–700 | Chữ phụ, dòng ưu đãi |
+| Headline | 82 px (vuông) · 68 px (cover) · 70 px (web), line-height 1.18 | Đủ chỗ cho dấu mũ và dấu nặng tiếng Việt |
 
-**Thành phần lặp lại:** logo tròn (cắt từ end card video) · huy hiệu “Chính thức ra mắt · 2026” · thẻ editor “Xin chào Việt Nam” có khung chọn · ô chữ có dấu Ă Đ Ơ Ư · thanh Canva AI “Thiết kế poster quảng cáo cho quán trà sữa” · thẻ ưu đãi Pro 30 ngày · nút CTA gradient.
+**Độ tương phản (WCAG):** chữ ink/nền giấy 12,9:1 · ink2/nền giấy 7,0:1 · chữ nhấn/nền giấy ≥ 3,6:1 (chữ lớn ≥ 3:1) · chữ trắng/nút CTA ≥ 5,2:1.
 
-**Độ tương phản (WCAG):** chữ trắng/nền đêm 17,0:1 · vàng/nền đêm 11,9:1 · chữ trắng/nút CTA ≥ 3,6:1 (đạt chuẩn chữ lớn ≥ 3:1).
+## 5. Phương án chữ (UX copy) theo từng nền tảng
 
-## 5. Phương án chữ (UX copy) đã cân nhắc
+| Nền tảng | Tệp khách hàng | Headline | CTA | Vì sao |
+|---|---|---|---|---|
+| TikTok, Story | Sinh viên 18–22 | Ý tưởng Việt. Sáng tạo không giới hạn. | Khám phá Canva AI | Gen Z thích làm mới văn hóa truyền thống; nhóm dùng AI nhiều nhất |
+| Facebook Feed | Người mới đi làm 22–26 | Slide họp sáng mai? Có mẫu đấy! | Thử ngay hôm nay | Tình huống gặp hằng tuần; mượn giọng “Bạn cần gì? Có mẫu đấy!” của Canva |
+| Fanpage | Mọi người vào Page | Ý tưởng Việt. Sáng tạo không giới hạn. | Nút “Thử ngay” của Page | Người đã chủ động tìm đến chỉ cần xác nhận đúng thương hiệu |
+| Website | Người sắp mua | Thiết kế như dân chuyên, miễn phí 30 ngày đầu. | Bắt đầu dùng thử miễn phí | Câu và nút lấy đúng giọng trang Canva Pro; nêu lợi ích thật (100 triệu nội dung, Canva AI 2.0) và ví quen thuộc |
 
-| Vị trí | An toàn | Trực diện (đã chọn) | Phá cách |
-|---|---|---|---|
-| Headline | Canva đã chính thức có mặt tại Việt Nam | **đã chính thức có mặt tại / VIỆT NAM** | Canva về nhà rồi! |
-| Tagline | Thiết kế dễ dàng bằng tiếng Việt | **Thiết kế tiếng Việt, chuẩn từng dấu.** | Đủ dấu. Đủ đẹp. Đủ Việt. |
-| CTA | Dùng thử miễn phí | **Thử ngay hôm nay** | Mở Canva, gõ ý tưởng |
-
-- Headline lặp đúng câu chốt của video để người xem nhận ra ngay khi gặp lại trên Feed/Story. Rủi ro: dài, nên tách hai tầng chữ (dòng dẫn nhỏ + “VIỆT NAM” cực lớn).
-- “Chuẩn từng dấu” đáp thẳng lỗi “Mai An Tiem” của lễ ra mắt. Rủi ro: là một lời hứa, nên mọi chữ trong bộ ấn phẩm phải đúng dấu tuyệt đối.
-- CTA giữ nguyên câu kết của video để thống nhất hành trình. Rủi ro: không nêu ưu đãi, nên đặt thẻ “Dùng thử Canva Pro miễn phí 30 ngày” ngay cạnh.
+- Giọng văn theo trang canva.com/vi_vn: câu ngắn, xưng “bạn”, gọi đúng tên tính năng (Soạn thảo Magic, Canva AI 2.0). “Chuẩn từng dấu” vẫn là lời hứa xuyên suốt (video, cover). Rủi ro: mọi chữ trong bộ ấn phẩm phải đúng dấu tuyệt đối.
+- Ưu đãi “Pro miễn phí 30 ngày” chưa được xác minh trên trang của Canva; nếu sai, phải sửa Feed và Header.
 
 ## 6. Nhật ký rà soát thiết kế (design critique)
 
 | Phát hiện | Mức | Đã xử lý |
 |---|---|---|
-| Chữ trắng trên đầu nút CTA (#00C4CC) chỉ đạt 2,2:1 | Nghiêm trọng | Đổi điểm đầu gradient sang #0B93B8 → ≥ 3,6:1 |
-| Cover: nút CTA ở giữa-dưới bị ảnh đại diện che trên điện thoại | Nghiêm trọng | Bỏ CTA khỏi cover (dùng nút “Thử ngay” của Fanpage), đưa cụm chữ lên cao |
-| Dấu nặng của “Ệ” chạm dòng “NAM” khi line-height 0.9 | Vừa | Tăng line-height lên 1.06 ở mọi kích thước |
-| Thẻ ưu đãi bị xuống dòng ở banner vuông | Nhẹ | Nới rộng thẻ, giảm cỡ dòng thanh toán |
-| Story: dòng tagline chạm đáy thẻ editor | Nhẹ | Dời tagline, thẻ ưu đãi, CTA xuống; CTA kết thúc ở y = 1628 |
+| Đầu xanh của gradient chữ nhấn (#5B8CFF) chỉ đạt 2,6:1 trên nền giấy | Nghiêm trọng | Đổi sang #4A6CE8 → 3,75:1 |
+| Chữ ký Canva cắt từ banner dọc còn dính nền giấy, lộ thành ô vuông | Vừa | Tách nền (key màu giấy) thành PNG trong suốt |
+| Feed: chữ lệch trái, ra ngoài lõi 810 px; dòng phụ đè lên lá sen | Vừa | Canh giữa toàn bộ; bỏ dòng phụ, đưa ưu đãi xuống dưới nút CTA |
+| Cover: dòng “Sáng tạo không giới hạn.” chạm quả cầu bên phải | Vừa | Giảm còn 68 px, dời khối chữ sang trái 50 px (vẫn trong vùng giữa) |
+| Story gốc: chữ in sẵn khác font với cả bộ, lỗi “Cộng cụ”, chữ ký Canva và hàng lợi ích nằm trong vùng 250 px bị che | Vừa | Xóa chữ bằng Higgsfield (giữ nguyên hình), dựng lại chữ bằng HTML trong vùng an toàn |
+| Feed: “Gửi sếp bản đẹp” nghe gượng, không giống giọng Canva | Vừa | Đổi thành “Slide họp sáng mai? Có mẫu đấy!” + Soạn thảo Magic |
 | Chữ tô gradient trong slide bị cắt chân: dấu nặng dưới “Việt”, đuôi g/p, dấu chấm của “!” | Nghiêm trọng | Nới vùng tô màu xuống dưới chân chữ; kiểm tra lại toàn bộ tiêu đề |
 
 Lưu ý còn lại: video hiện có logo ở 3 điểm chạm (0:01, 0:03–0:06, 0:26–0:30), chưa có watermark cố định suốt 30 giây như đề gợi ý.
